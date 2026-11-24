@@ -1,0 +1,471 @@
+{
+  "note": "Gate mechanism demonstration against a SIMULATED model; not a model-quality result.",
+  "baseline": "default",
+  "scenarios": [
+    {
+      "label": "unchanged candidate",
+      "expectedToPass": true,
+      "gatePassed": true,
+      "agrees": true,
+      "report": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "success rate",
+            "baseline": 0.9097222222222222,
+            "candidate": 0.9097222222222222,
+            "limit": "drop at most 0.02",
+            "pass": true
+          },
+          {
+            "name": "mean cost per run (cost units)",
+            "baseline": 17.32,
+            "candidate": 17.32,
+            "limit": "increase at most 10%",
+            "pass": true
+          },
+          {
+            "name": "runs stopped by a budget",
+            "baseline": 0,
+            "candidate": 0,
+            "limit": "at most 0 more",
+            "pass": true
+          }
+        ],
+        "newlyFailing": [],
+        "newlyPassing": [],
+        "note": "Both evaluations use a simulated model; the gate checks platform behaviour, not real-model quality."
+      },
+      "candidateSummary": {
+        "n": 144,
+        "successRate": {
+          "estimate": 0.9097222222222222,
+          "lo": 0.8516702913733655,
+          "hi": 0.9464820056405857,
+          "n": 144
+        },
+        "meanCost": 17.32,
+        "meanTokens": 4890.083333333333,
+        "meanModelCalls": 8.034722222222221,
+        "toolErrorRate": 0.07988165680473373,
+        "budgetExceeded": 0,
+        "failedRuns": 1,
+        "byCategory": {
+          "data lookup": {
+            "n": 6,
+            "successRate": 1
+          },
+          "support triage": {
+            "n": 72,
+            "successRate": 0.9305555555555556
+          },
+          "document processing": {
+            "n": 66,
+            "successRate": 0.8787878787878788
+          }
+        }
+      }
+    },
+    {
+      "label": "success-rate regression (validation off, higher malformed-argument rate)",
+      "expectedToPass": false,
+      "gatePassed": false,
+      "agrees": true,
+      "report": {
+        "pass": false,
+        "checks": [
+          {
+            "name": "success rate",
+            "baseline": 0.9097222222222222,
+            "candidate": 0.4444444444444444,
+            "limit": "drop at most 0.02",
+            "pass": false
+          },
+          {
+            "name": "mean cost per run (cost units)",
+            "baseline": 17.32,
+            "candidate": 17.724125,
+            "limit": "increase at most 10%",
+            "pass": true
+          },
+          {
+            "name": "runs stopped by a budget",
+            "baseline": 0,
+            "candidate": 0,
+            "limit": "at most 0 more",
+            "pass": true
+          }
+        ],
+        "newlyFailing": [
+          "sc-002#0",
+          "sc-007#0",
+          "sc-008#0",
+          "sc-013#0",
+          "sc-014#0",
+          "sc-015#0",
+          "sc-016#0",
+          "sc-018#0",
+          "sc-022#0",
+          "sc-024#0",
+          "sc-025#0",
+          "sc-027#0",
+          "sc-030#0",
+          "sc-033#0",
+          "sc-034#0",
+          "sc-035#0",
+          "sc-037#0",
+          "sc-039#0",
+          "sc-043#0",
+          "sc-044#0",
+          "sc-045#0",
+          "sc-046#0",
+          "sc-047#0",
+          "sc-048#0",
+          "sc-002#1",
+          "sc-009#1",
+          "sc-010#1",
+          "sc-014#1",
+          "sc-016#1",
+          "sc-019#1",
+          "sc-020#1",
+          "sc-024#1",
+          "sc-026#1",
+          "sc-028#1",
+          "sc-030#1",
+          "sc-032#1",
+          "sc-034#1",
+          "sc-035#1",
+          "sc-036#1",
+          "sc-037#1",
+          "sc-038#1",
+          "sc-041#1",
+          "sc-042#1",
+          "sc-044#1",
+          "sc-045#1",
+          "sc-047#1",
+          "sc-048#1",
+          "sc-005#2",
+          "sc-008#2",
+          "sc-010#2",
+          "sc-012#2",
+          "sc-015#2",
+          "sc-017#2",
+          "sc-020#2",
+          "sc-021#2",
+          "sc-022#2",
+          "sc-024#2",
+          "sc-025#2",
+          "sc-028#2",
+          "sc-029#2",
+          "sc-032#2",
+          "sc-034#2",
+          "sc-035#2",
+          "sc-036#2",
+          "sc-037#2",
+          "sc-041#2",
+          "sc-042#2",
+          "sc-043#2",
+          "sc-044#2",
+          "sc-046#2",
+          "sc-048#2"
+        ],
+        "newlyPassing": [
+          "sc-040#0",
+          "sc-033#1",
+          "sc-046#1",
+          "sc-018#2"
+        ],
+        "note": "Both evaluations use a simulated model; the gate checks platform behaviour, not real-model quality."
+      },
+      "candidateSummary": {
+        "n": 144,
+        "successRate": {
+          "estimate": 0.4444444444444444,
+          "lo": 0.36577682728210925,
+          "hi": 0.5259991324448127,
+          "n": 144
+        },
+        "meanCost": 17.724125,
+        "meanTokens": 5001.791666666667,
+        "meanModelCalls": 8.097222222222221,
+        "toolErrorRate": 0.2526215443279314,
+        "budgetExceeded": 0,
+        "failedRuns": 27,
+        "byCategory": {
+          "data lookup": {
+            "n": 6,
+            "successRate": 1
+          },
+          "support triage": {
+            "n": 72,
+            "successRate": 0.4722222222222222
+          },
+          "document processing": {
+            "n": 66,
+            "successRate": 0.36363636363636365
+          }
+        }
+      }
+    },
+    {
+      "label": "cost regression (model priced 3x higher)",
+      "expectedToPass": false,
+      "gatePassed": false,
+      "agrees": true,
+      "report": {
+        "pass": false,
+        "checks": [
+          {
+            "name": "success rate",
+            "baseline": 0.9097222222222222,
+            "candidate": 0.9097222222222222,
+            "limit": "drop at most 0.02",
+            "pass": true
+          },
+          {
+            "name": "mean cost per run (cost units)",
+            "baseline": 17.32,
+            "candidate": 51.96000000000001,
+            "limit": "increase at most 10%",
+            "pass": false
+          },
+          {
+            "name": "runs stopped by a budget",
+            "baseline": 0,
+            "candidate": 0,
+            "limit": "at most 0 more",
+            "pass": true
+          }
+        ],
+        "newlyFailing": [],
+        "newlyPassing": [],
+        "note": "Both evaluations use a simulated model; the gate checks platform behaviour, not real-model quality."
+      },
+      "candidateSummary": {
+        "n": 144,
+        "successRate": {
+          "estimate": 0.9097222222222222,
+          "lo": 0.8516702913733655,
+          "hi": 0.9464820056405857,
+          "n": 144
+        },
+        "meanCost": 51.96000000000001,
+        "meanTokens": 4890.083333333333,
+        "meanModelCalls": 8.034722222222221,
+        "toolErrorRate": 0.07988165680473373,
+        "budgetExceeded": 0,
+        "failedRuns": 1,
+        "byCategory": {
+          "data lookup": {
+            "n": 6,
+            "successRate": 1
+          },
+          "support triage": {
+            "n": 72,
+            "successRate": 0.9305555555555556
+          },
+          "document processing": {
+            "n": 66,
+            "successRate": 0.8787878787878788
+          }
+        }
+      }
+    },
+    {
+      "label": "budget stops (per-run token cap of 2500)",
+      "expectedToPass": false,
+      "gatePassed": false,
+      "agrees": true,
+      "report": {
+        "pass": false,
+        "checks": [
+          {
+            "name": "success rate",
+            "baseline": 0.9097222222222222,
+            "candidate": 0,
+            "limit": "drop at most 0.02",
+            "pass": false
+          },
+          {
+            "name": "mean cost per run (cost units)",
+            "baseline": 17.32,
+            "candidate": 4.852104166666667,
+            "limit": "increase at most 10%",
+            "pass": true
+          },
+          {
+            "name": "runs stopped by a budget",
+            "baseline": 0,
+            "candidate": 144,
+            "limit": "at most 0 more",
+            "pass": false
+          }
+        ],
+        "newlyFailing": [
+          "sc-001#0",
+          "sc-002#0",
+          "sc-003#0",
+          "sc-004#0",
+          "sc-005#0",
+          "sc-006#0",
+          "sc-007#0",
+          "sc-008#0",
+          "sc-009#0",
+          "sc-010#0",
+          "sc-011#0",
+          "sc-013#0",
+          "sc-014#0",
+          "sc-015#0",
+          "sc-016#0",
+          "sc-017#0",
+          "sc-018#0",
+          "sc-019#0",
+          "sc-020#0",
+          "sc-021#0",
+          "sc-022#0",
+          "sc-023#0",
+          "sc-024#0",
+          "sc-025#0",
+          "sc-026#0",
+          "sc-027#0",
+          "sc-028#0",
+          "sc-029#0",
+          "sc-030#0",
+          "sc-031#0",
+          "sc-033#0",
+          "sc-034#0",
+          "sc-035#0",
+          "sc-036#0",
+          "sc-037#0",
+          "sc-039#0",
+          "sc-041#0",
+          "sc-042#0",
+          "sc-043#0",
+          "sc-044#0",
+          "sc-045#0",
+          "sc-046#0",
+          "sc-047#0",
+          "sc-048#0",
+          "sc-001#1",
+          "sc-002#1",
+          "sc-003#1",
+          "sc-004#1",
+          "sc-005#1",
+          "sc-006#1",
+          "sc-007#1",
+          "sc-008#1",
+          "sc-009#1",
+          "sc-010#1",
+          "sc-011#1",
+          "sc-012#1",
+          "sc-013#1",
+          "sc-014#1",
+          "sc-015#1",
+          "sc-016#1",
+          "sc-017#1",
+          "sc-018#1",
+          "sc-019#1",
+          "sc-020#1",
+          "sc-021#1",
+          "sc-023#1",
+          "sc-024#1",
+          "sc-026#1",
+          "sc-027#1",
+          "sc-028#1",
+          "sc-029#1",
+          "sc-030#1",
+          "sc-031#1",
+          "sc-032#1",
+          "sc-034#1",
+          "sc-035#1",
+          "sc-036#1",
+          "sc-037#1",
+          "sc-038#1",
+          "sc-039#1",
+          "sc-041#1",
+          "sc-042#1",
+          "sc-043#1",
+          "sc-044#1",
+          "sc-045#1",
+          "sc-047#1",
+          "sc-048#1",
+          "sc-001#2",
+          "sc-002#2",
+          "sc-003#2",
+          "sc-004#2",
+          "sc-005#2",
+          "sc-006#2",
+          "sc-007#2",
+          "sc-008#2",
+          "sc-009#2",
+          "sc-010#2",
+          "sc-011#2",
+          "sc-012#2",
+          "sc-013#2",
+          "sc-014#2",
+          "sc-015#2",
+          "sc-016#2",
+          "sc-017#2",
+          "sc-019#2",
+          "sc-020#2",
+          "sc-021#2",
+          "sc-022#2",
+          "sc-024#2",
+          "sc-025#2",
+          "sc-026#2",
+          "sc-027#2",
+          "sc-028#2",
+          "sc-029#2",
+          "sc-030#2",
+          "sc-031#2",
+          "sc-032#2",
+          "sc-034#2",
+          "sc-035#2",
+          "sc-036#2",
+          "sc-037#2",
+          "sc-038#2",
+          "sc-040#2",
+          "sc-041#2",
+          "sc-042#2",
+          "sc-043#2",
+          "sc-044#2",
+          "sc-045#2",
+          "sc-046#2",
+          "sc-047#2",
+          "sc-048#2"
+        ],
+        "newlyPassing": [],
+        "note": "Both evaluations use a simulated model; the gate checks platform behaviour, not real-model quality."
+      },
+      "candidateSummary": {
+        "n": 144,
+        "successRate": {
+          "estimate": 0,
+          "lo": 0,
+          "hi": 0.025983637542296996,
+          "n": 144
+        },
+        "meanCost": 4.852104166666667,
+        "meanTokens": 1290.7569444444443,
+        "meanModelCalls": 2.9583333333333335,
+        "toolErrorRate": 0.07276995305164319,
+        "budgetExceeded": 144,
+        "failedRuns": 0,
+        "byCategory": {
+          "data lookup": {
+            "n": 6,
+            "successRate": 0
+          },
+          "support triage": {
+            "n": 72,
+            "successRate": 0
+          },
+          "document processing": {
+            "n": 66,
+            "successRate": 0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "meta": {
+    "experiment": "E2",
+    "simulated": true,
+    "note": "SIMULATED: all model behaviour comes from a seeded simulator with assumed parameters (src/model/profiles.ts). Results test the platform mechanisms under those assumptions, not any real model.",
+    "node": "v25.9.0",
+    "os": "win32 10.0.26200",
+    "cpuModel": "AMD EPYC 7543P 32-Core Processor",
+    "logicalCpus": 8,
+    "memoryGB": 28,
+    "freeMemoryGBAtStart": 3.4,
+    "cpuLoadPercentAtStart": 100,
+    "cpuLoadPercentAtEnd": 100,
+    "coresUsed": "single Node.js thread (at most 2 cores incl. GC/libuv helpers; UV_THREADPOOL_SIZE=2)",
+    "codeDigest": "72c7114a274175fc8464ef601fcd5c348f528df77fbadcc414dbb041c20104c5",
+    "codeFiles": 76,
+    "startedAtUtc": "2026-10-22T18:24:23.888Z",
+    "wallSeconds": 36.6,
+    "cpuSeconds": 24.3,
+    "smoke": false,
+    "contentionNote": "The machine was shared with other processes. Wall-clock times are informational only; no conclusion in this repository depends on timing. Counts, rates and costs (in simulated cost units) are deterministic given the seeds."
+  },
+  "params": {
+    "arms": [
+      {
+        "name": "base",
+        "description": "default sim-large profile (slip rate grows with context: slipCtxGrowth = 0.15 per prior call)"
+      },
+      {
+        "name": "no_context_growth",
+        "description": "control: slipCtxGrowth = 0 (no degradation with context length)"
+      }
+    ],
+    "strategies": [
+      "reactive",
+      "plan_execute"
+    ],
+    "tasks": 120,
+    "replicateSeeds": 10,
+    "runsTotal": 4800,
+    "taskSeed": 11,
+    "worldSeed": 7,
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 20260101,
+      "unit": "tasks (per-task mean over replicate seeds)"
+    },
+    "validation": "repair",
+    "maxTurns": 40
+  },
+  "arms": {
+    "base": {
+      "comparisons": [
+        {
+          "bin": "3-4",
+          "success": {
+            "tasks": 30,
+            "a": 0.9366666666666664,
+            "b": 0.9699999999999999,
+            "diff": {
+              "estimate": 0.03333333333333333,
+              "lo": 3.7007434154171884e-18,
+              "hi": 0.06333333333333334,
+              "n": 30
+            },
+            "wilcoxonP": 0.06346191438330329,
+            "wilcoxonN": 17,
+            "cliffs": 0.2677777777777778,
+            "cliffsMagnitude": "small"
+          },
+          "cost": {
+            "estimate": 0.13914843706008417,
+            "lo": 0.11014950619845774,
+            "hi": 0.17220454261857737,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 8.911142348754447,
+              "lo": 8.217307492772242,
+              "hi": 9.6471611416722,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 9.802278350515463,
+              "lo": 9.084674999999999,
+              "hi": 10.611493709729379,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.12324039304344314
+        },
+        {
+          "bin": "5-6",
+          "success": {
+            "tasks": 30,
+            "a": 0.8966666666666666,
+            "b": 0.9466666666666665,
+            "diff": {
+              "estimate": 0.04999999999999998,
+              "lo": 0.00999999999999999,
+              "hi": 0.09,
+              "n": 30
+            },
+            "wilcoxonP": 0.05213907669318818,
+            "wilcoxonN": 18,
+            "cliffs": 0.3511111111111111,
+            "cliffsMagnitude": "medium"
+          },
+          "cost": {
+            "estimate": 0.04766487438231004,
+            "lo": 0.025095843311431023,
+            "hi": 0.07196118156028347,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 14.960866171003719,
+              "lo": 14.124869174773563,
+              "hi": 15.873835752829692,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 14.84612323943662,
+              "lo": 13.951645931965947,
+              "hi": 15.933125416327004,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.12324039304344314
+        },
+        {
+          "bin": "7-8",
+          "success": {
+            "tasks": 30,
+            "a": 0.88,
+            "b": 0.9266666666666664,
+            "diff": {
+              "estimate": 0.04666666666666666,
+              "lo": 0.0066666666666666576,
+              "hi": 0.09000000000000004,
+              "n": 30
+            },
+            "wilcoxonP": 0.030810098260860785,
+            "wilcoxonN": 20,
+            "cliffs": 0.23666666666666666,
+            "cliffsMagnitude": "small"
+          },
+          "cost": {
+            "estimate": 0.007788188825580411,
+            "lo": -0.01240638936653236,
+            "hi": 0.027905653940044357,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 22.42906818181818,
+              "lo": 21.16246204379562,
+              "hi": 23.947716449999998,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 21.465431654676255,
+              "lo": 20.51182982142857,
+              "hi": 22.516731071983777,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.12324039304344314
+        },
+        {
+          "bin": "9-10",
+          "success": {
+            "tasks": 30,
+            "a": 0.86,
+            "b": 0.9099999999999999,
+            "diff": {
+              "estimate": 0.049999999999999996,
+              "lo": 0.006666666666666654,
+              "hi": 0.09333333333333332,
+              "n": 30
+            },
+            "wilcoxonP": 0.03190614354096599,
+            "wilcoxonN": 19,
+            "cliffs": 0.35777777777777775,
+            "cliffsMagnitude": "medium"
+          },
+          "cost": {
+            "estimate": -0.020458693231118152,
+            "lo": -0.0367855420506513,
+            "hi": -0.0030611826428878835,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 31.385418604651168,
+              "lo": 30.054945844573265,
+              "hi": 32.68952879733217,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 29.05412087912087,
+              "lo": 27.661054437277578,
+              "hi": 30.718561132075465,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.12324039304344314
+        }
+      ],
+      "description": "default sim-large profile (slip rate grows with context: slipCtxGrowth = 0.15 per prior call)"
+    },
+    "no_context_growth": {
+      "comparisons": [
+        {
+          "bin": "3-4",
+          "success": {
+            "tasks": 30,
+            "a": 0.9466666666666667,
+            "b": 0.9699999999999999,
+            "diff": {
+              "estimate": 0.02333333333333333,
+              "lo": -0.006666666666666665,
+              "hi": 0.053333333333333344,
+              "n": 30
+            },
+            "wilcoxonP": 0.18659920590897072,
+            "wilcoxonN": 14,
+            "cliffs": 0.1711111111111111,
+            "cliffsMagnitude": "small"
+          },
+          "cost": {
+            "estimate": 0.13915116662173865,
+            "lo": 0.11015475537088902,
+            "hi": 0.17220722802026187,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 8.81698943661972,
+              "lo": 8.10635740582192,
+              "hi": 9.564119836956522,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 9.802278350515463,
+              "lo": 9.084674999999999,
+              "hi": 10.611493709729379,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.7463968236358829
+        },
+        {
+          "bin": "5-6",
+          "success": {
+            "tasks": 30,
+            "a": 0.9199999999999999,
+            "b": 0.9466666666666665,
+            "diff": {
+              "estimate": 0.026666666666666658,
+              "lo": -0.010000000000000005,
+              "hi": 0.06333333333333331,
+              "n": 30
+            },
+            "wilcoxonP": 0.21653560189192156,
+            "wilcoxonN": 17,
+            "cliffs": 0.22,
+            "cliffsMagnitude": "small"
+          },
+          "cost": {
+            "estimate": 0.047689866033922224,
+            "lo": 0.025102047900327273,
+            "hi": 0.0719902607962143,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 14.581076086956523,
+              "lo": 13.83559185879055,
+              "hi": 15.446459938176819,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 14.84612323943662,
+              "lo": 13.951645931965947,
+              "hi": 15.933125416327004,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 0.7463968236358829
+        },
+        {
+          "bin": "7-8",
+          "success": {
+            "tasks": 30,
+            "a": 0.9166666666666665,
+            "b": 0.9266666666666664,
+            "diff": {
+              "estimate": 0.009999999999999998,
+              "lo": -0.029999999999999995,
+              "hi": 0.05,
+              "n": 30
+            },
+            "wilcoxonP": 0.6736390017790359,
+            "wilcoxonN": 16,
+            "cliffs": 0.03666666666666667,
+            "cliffsMagnitude": "negligible"
+          },
+          "cost": {
+            "estimate": 0.009483141870563427,
+            "lo": -0.010390843201448374,
+            "hi": 0.02944507282950654,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 21.495752727272727,
+              "lo": 20.40705628759399,
+              "hi": 22.81628796992482,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 21.465431654676255,
+              "lo": 20.51182982142857,
+              "hi": 22.516731071983777,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 1
+        },
+        {
+          "bin": "9-10",
+          "success": {
+            "tasks": 30,
+            "a": 0.9066666666666664,
+            "b": 0.9099999999999999,
+            "diff": {
+              "estimate": 0.0033333333333333327,
+              "lo": -0.04000000000000001,
+              "hi": 0.04666666666666666,
+              "n": 30
+            },
+            "wilcoxonP": 0.8770564428734939,
+            "wilcoxonN": 22,
+            "cliffs": 0.052222222222222225,
+            "cliffsMagnitude": "negligible"
+          },
+          "cost": {
+            "estimate": -0.019415311648593447,
+            "lo": -0.034786488065249116,
+            "hi": -0.002534603906309871,
+            "n": 30
+          },
+          "cps": {
+            "reactive": {
+              "estimate": 29.73831617647059,
+              "lo": 28.587647492401214,
+              "hi": 30.868099646865332,
+              "n": 30
+            },
+            "plan": {
+              "estimate": 29.05412087912087,
+              "lo": 27.661054437277578,
+              "hi": 30.718561132075465,
+              "n": 30
+            }
+          },
+          "holmAdjustedP": 1
+        }
+      ],
+      "description": "control: slipCtxGrowth = 0 (no degradation with context length)"
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H2",
+      "rule": "base arm: for each of the bins 5-6, 7-8, 9-10 the success diff (plan - reactive) has 95% CI lower bound > 0 and Holm-adjusted p < 0.05; AND for bin 3-4 there is no significant positive difference",
+      "longBinsAllSignificantlyBetter": false,
+      "shortBinNoSignificantGain": true,
+      "verdict": "not supported",
+      "controlArmLongBinsAnyGain": false,
+      "caveat": "The base-arm advantage is produced by the simulator assumption that reactive slip rates grow with context; the control arm shows what happens without it. This tests that the platform runs and accounts for both strategies correctly, not that plan-then-execute helps a real model."
+    }
+  ]
+}

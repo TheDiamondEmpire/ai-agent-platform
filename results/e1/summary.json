@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "experiment": "E1",
+    "simulated": true,
+    "note": "SIMULATED: all model behaviour comes from a seeded simulator with assumed parameters (src/model/profiles.ts). Results test the platform mechanisms under those assumptions, not any real model.",
+    "node": "v25.9.0",
+    "os": "win32 10.0.26200",
+    "cpuModel": "AMD EPYC 7543P 32-Core Processor",
+    "logicalCpus": 8,
+    "memoryGB": 28,
+    "freeMemoryGBAtStart": 3.5,
+    "cpuLoadPercentAtStart": 100,
+    "cpuLoadPercentAtEnd": 100,
+    "coresUsed": "single Node.js thread (at most 2 cores incl. GC/libuv helpers; UV_THREADPOOL_SIZE=2)",
+    "codeDigest": "72c7114a274175fc8464ef601fcd5c348f528df77fbadcc414dbb041c20104c5",
+    "codeFiles": 76,
+    "startedAtUtc": "2026-10-22T18:23:47.610Z",
+    "wallSeconds": 36.2,
+    "cpuSeconds": 18.7,
+    "smoke": false,
+    "contentionNote": "The machine was shared with other processes. Wall-clock times are informational only; no conclusion in this repository depends on timing. Counts, rates and costs (in simulated cost units) are deterministic given the seeds."
+  },
+  "params": {
+    "models": [
+      "sim-large",
+      "sim-small"
+    ],
+    "modes": [
+      "off",
+      "on",
+      "repair"
+    ],
+    "tasks": 120,
+    "replicateSeeds": 5,
+    "runsTotal": 3600,
+    "taskSeed": 11,
+    "worldSeed": 7,
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 20260101,
+      "unit": "tasks (per-task mean over replicate seeds)"
+    },
+    "strategy": "reactive",
+    "maxRepairs": 2
+  },
+  "comparisons": {
+    "sim-large:repair_vs_off": {
+      "success": {
+        "tasks": 120,
+        "a": 0.8133333333333324,
+        "b": 0.8833333333333326,
+        "diff": {
+          "estimate": 0.07,
+          "lo": 0.04333333333333335,
+          "hi": 0.09666666666666665,
+          "n": 120
+        },
+        "wilcoxonP": 0.000004094266593090978,
+        "wilcoxonN": 44,
+        "cliffs": 0.20006944444444444,
+        "cliffsMagnitude": "small"
+      },
+      "addedCost": {
+        "estimate": 0.028227205262751243,
+        "lo": 0.01671024347370313,
+        "hi": 0.040237216561834786,
+        "n": 120
+      }
+    },
+    "sim-large:on_vs_off": {
+      "success": {
+        "tasks": 120,
+        "a": 0.8133333333333324,
+        "b": 0.6466666666666662,
+        "diff": {
+          "estimate": -0.16666666666666652,
+          "lo": -0.19666666666666652,
+          "hi": -0.13666666666666658,
+          "n": 120
+        },
+        "wilcoxonP": 3.2307490016592055e-13,
+        "wilcoxonN": 69,
+        "cliffs": -0.4060416666666667,
+        "cliffsMagnitude": "medium"
+      },
+      "addedCost": {
+        "estimate": -0.19994465313432752,
+        "lo": -0.23253126510272684,
+        "hi": -0.1660757532859695,
+        "n": 120
+      }
+    },
+    "sim-large:repair_vs_on": {
+      "success": {
+        "tasks": 120,
+        "a": 0.6466666666666662,
+        "b": 0.8833333333333326,
+        "diff": {
+          "estimate": 0.23666666666666647,
+          "lo": 0.20166666666666652,
+          "hi": 0.2716666666666665,
+          "n": 120
+        },
+        "wilcoxonP": 2.220446049250313e-16,
+        "wilcoxonN": 90,
+        "cliffs": 0.5761805555555556,
+        "cliffsMagnitude": "large"
+      },
+      "addedCost": {
+        "estimate": 0.2851950921782769,
+        "lo": 0.23066623610480746,
+        "hi": 0.34357835331229136,
+        "n": 120
+      }
+    },
+    "sim-small:repair_vs_off": {
+      "success": {
+        "tasks": 120,
+        "a": 0.49999999999999983,
+        "b": 0.6866666666666663,
+        "diff": {
+          "estimate": 0.18666666666666648,
+          "lo": 0.13999999999999999,
+          "hi": 0.23166666666666644,
+          "n": 120
+        },
+        "wilcoxonP": 1.2725576148397977e-10,
+        "wilcoxonN": 89,
+        "cliffs": 0.37277777777777776,
+        "cliffsMagnitude": "medium"
+      },
+      "addedCost": {
+        "estimate": 0.11546057351199379,
+        "lo": 0.07940124560667432,
+        "hi": 0.15255312221483328,
+        "n": 120
+      }
+    },
+    "sim-small:on_vs_off": {
+      "success": {
+        "tasks": 120,
+        "a": 0.49999999999999983,
+        "b": 0.20999999999999988,
+        "diff": {
+          "estimate": -0.28999999999999987,
+          "lo": -0.33000000000000007,
+          "hi": -0.2516666666666664,
+          "n": 120
+        },
+        "wilcoxonP": 0,
+        "wilcoxonN": 94,
+        "cliffs": -0.5701388888888889,
+        "cliffsMagnitude": "large"
+      },
+      "addedCost": {
+        "estimate": -0.5594479250771538,
+        "lo": -0.5904621693187507,
+        "hi": -0.5293185015491331,
+        "n": 120
+      }
+    },
+    "sim-small:repair_vs_on": {
+      "success": {
+        "tasks": 120,
+        "a": 0.20999999999999988,
+        "b": 0.6866666666666663,
+        "diff": {
+          "estimate": 0.4766666666666669,
+          "lo": 0.4400000000000002,
+          "hi": 0.5116666666666669,
+          "n": 120
+        },
+        "wilcoxonP": 0,
+        "wilcoxonN": 118,
+        "cliffs": 0.8488888888888889,
+        "cliffsMagnitude": "large"
+      },
+      "addedCost": {
+        "estimate": 1.5319607760497878,
+        "lo": 1.3418032358547125,
+        "hi": 1.7467982160013085,
+        "n": 120
+      }
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1 (sim-large)",
+      "rule": "success diff (repair - off) 95% CI lower bound > 0 AND Holm-adjusted Wilcoxon p < 0.05 AND upper bound of the 95% CI of added mean cost < 15%",
+      "successDiff": {
+        "estimate": 0.07,
+        "lo": 0.04333333333333335,
+        "hi": 0.09666666666666665,
+        "n": 120
+      },
+      "holmAdjustedP": 0.000004094266593090978,
+      "addedCost": {
+        "estimate": 0.028227205262751243,
+        "lo": 0.01671024347370313,
+        "hi": 0.040237216561834786,
+        "n": 120
+      },
+      "successCriterionMet": true,
+      "costCriterionMet": true,
+      "verdict": "supported"
+    },
+    {
+      "id": "H1 (sim-small)",
+      "rule": "success diff (repair - off) 95% CI lower bound > 0 AND Holm-adjusted Wilcoxon p < 0.05 AND upper bound of the 95% CI of added mean cost < 15%",
+      "successDiff": {
+        "estimate": 0.18666666666666648,
+        "lo": 0.13999999999999999,
+        "hi": 0.23166666666666644,
+        "n": 120
+      },
+      "holmAdjustedP": 2.5451152296795954e-10,
+      "addedCost": {
+        "estimate": 0.11546057351199379,
+        "lo": 0.07940124560667432,
+        "hi": 0.15255312221483328,
+        "n": 120
+      },
+      "successCriterionMet": true,
+      "costCriterionMet": false,
+      "verdict": "success gain confirmed but cost criterion not met"
+    }
+  ]
+}
